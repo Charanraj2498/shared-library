@@ -1,7 +1,7 @@
 def call(String build_number, String artifactory_ip) {
             sh 'curl ifconfig.me'
             echo " ${artifactory_ip}"
-            echo "${build_number}"
+            echo "${BUID_NUMBER}"
             sh """
             curl -L -u "${ARTIFACTORY_CREDENTIALS_USR}:${ARTIFACTORY_CREDENTIALS_PSW}" -O "http://${artifactory_ip}:8082/artifactory/jenkins-world-libs-release/com/efsavage/hello-world-war/${BUILD_NUMBER}/hello-world-war-${BUILD_NUMBER}.war"
             """
